@@ -1,0 +1,13 @@
+<div *ngFor="let post of posts">
+  <div class="card" *ngIf="!post.active">
+    <div class="card-body" [ngClass]="getClassOf(post)">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text">
+        {{ post.body }}
+      </p>
+      <button class="btn btn-primary" (click)="active(post, $event)">
+        Attiva
+      </button>
+    </div>
+  </div>
+</div>
